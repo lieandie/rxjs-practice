@@ -1,1 +1,3 @@
-<app-item></app-item>
+<div *ngFor="let itemData of itemDataArray">
+  <app-item [itemData]="itemData"></app-item>
+</div>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemDataService} from '../../core/item-data/item-data.service';
+import {Observable} from 'rxjs';
+import {ItemData} from '../../core/item-data/item-data';
 
 @Component({
   selector: 'app-main-page',
@@ -8,9 +10,13 @@ import {ItemDataService} from '../../core/item-data/item-data.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(private dataService: ItemDataService) { }
+  itemData$: Observable<ItemData[]>;
+
+  constructor(private dataService: ItemDataService) {
+  }
 
   ngOnInit() {
+    this.itemData$ = this.dataService.getAllItemData(10);
   }
 
 }

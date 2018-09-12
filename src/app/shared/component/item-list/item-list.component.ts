@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ItemData} from '../../../core/item-data/item-data';
 
 @Component({
   selector: 'app-item-list',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor() { }
+  @Input() itemDataArray: ItemData[];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

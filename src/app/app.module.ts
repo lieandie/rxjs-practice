@@ -12,7 +12,7 @@ import {FeatureModule} from './feature/feature.module';
   imports: [
     BrowserModule,
     SharedModule,
-    FeatureModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
